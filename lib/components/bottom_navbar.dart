@@ -5,10 +5,10 @@ class BottomNavBarRaisedInsetFb1 extends StatefulWidget {
   final int selectedIndex;
 
   const BottomNavBarRaisedInsetFb1({
-    Key? key,
+    super.key,
     required this.onNavBarItemTapped,
     required this.selectedIndex,
-  }) : super(key: key);
+  });
 
   @override
   _BottomNavBarRaisedInsetFb1State createState() =>
@@ -22,7 +22,7 @@ class _BottomNavBarRaisedInsetFb1State
     Size size = MediaQuery.of(context).size;
     double height = 56;
 
-    final primaryColor = Colors.blue;
+    final primaryColor = Color(0xFFFF2449);
     final secondaryColor = Colors.black54;
     final accentColor = const Color(0xffffffff);
     final backgroundColor = Colors.white;
@@ -47,9 +47,9 @@ class _BottomNavBarRaisedInsetFb1State
             child: FloatingActionButton(
               backgroundColor: primaryColor,
               foregroundColor: accentColor,
-              child: Icon(Icons.qr_code_scanner_outlined),
               elevation: 0.1,
               onPressed: () {},
+              child: Icon(Icons.qr_code_scanner_outlined),
             ),
           ),
           SizedBox(
@@ -146,14 +146,14 @@ class BottomNavCurvePainter extends CustomPainter {
 
 class NavBarIcon extends StatelessWidget {
   const NavBarIcon({
-    Key? key,
+    super.key,
     required this.text,
     required this.icon,
     required this.selected,
     required this.onPressed,
     this.selectedColor = const Color(0xffFF8527),
     this.defaultColor = Colors.black54,
-  }) : super(key: key);
+  });
 
   final String text;
   final IconData icon;

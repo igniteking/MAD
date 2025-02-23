@@ -4,7 +4,7 @@ import 'package:mad/screens/home/home.dart';
 import 'package:mad/screens/profile/profile.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   _MainScreenState createState() => _MainScreenState();

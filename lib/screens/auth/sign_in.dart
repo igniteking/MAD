@@ -4,6 +4,8 @@ import 'package:mad/services/auth_service.dart';
 import 'package:appwrite/models.dart' as models;
 
 class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
+
   @override
   _SignInScreenState createState() => _SignInScreenState();
 }
