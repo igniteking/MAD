@@ -52,19 +52,22 @@ class _AdsSectionState extends State<AdsSection> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: SingleChildScrollView(
-        controller: _scrollController,
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            AdCard(adImage: "assets/ad.png"),
-            SizedBox(width: 10),
-            AdCard(adImage: "assets/ad.png"), // This will be centered
-            SizedBox(width: 10),
-            AdCard(adImage: "assets/ad.png"),
-          ],
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: SizedBox(
+        height: 100,
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              AdCard(adImage: "assets/ad.png"),
+              SizedBox(width: 10),
+              AdCard(adImage: "assets/ad.png"), // This will be centered
+              SizedBox(width: 10),
+              AdCard(adImage: "assets/ad.png"),
+            ],
+          ),
         ),
       ),
     );
