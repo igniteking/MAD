@@ -27,10 +27,10 @@ class _BottomNavBarRaisedInsetFb1State
     final accentColor = const Color(0xffffffff);
     final backgroundColor = Colors.white;
     final shadowColor = Colors.grey;
-    double elevation = 10;
+    double elevation = 0;
 
     return BottomAppBar(
-      color: Colors.transparent,
+      color: Colors.white,
       elevation: 0,
       child: Stack(
         children: [
