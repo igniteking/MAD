@@ -6,21 +6,12 @@ final List<Map<String, dynamic>> cardData = [
     'amount': '₹2500',
     'location': 'Prestige Shantiniketan',
     'code': '01',
-    'color': [Color(0xFFFF5F6D), Color(0xFFFFC371)], // Pink Gradient
-  },
-  {
-    'id': '#21AB344',
-    'amount': '₹2500',
-    'location': 'Prestige Shantiniketan',
-    'code': '01',
-    'color': [Color(0xFFFF5F6D), Color(0xFFFFC371)], // Pink Gradient
   },
   {
     'id': '#21HG567',
     'amount': '₹1500',
     'location': 'Pheonix Mall',
-    'code': '02',
-    'color': [Color(0xFFFFC371), Color(0xFFFFD700)], // Yellow Gradient
+    'code': '03',
   },
 ];
 
@@ -30,21 +21,91 @@ class WalletSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(left: 15.0),
       child: SizedBox(
-        height: 140, // Fixed height for horizontal scroll
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: cardData.length,
-          itemBuilder: (context, index) {
-            return CashCard(
-              id: cardData[index]['id'],
-              amount: cardData[index]['amount'],
-              location: cardData[index]['location'],
-              code: cardData[index]['code'],
-              gradientColors: cardData[index]['color'],
-            );
-          },
+        height: 150,
+        width: double.infinity,
+        child: Row(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment:
+                  CrossAxisAlignment.start, // Ensures proper alignment
+              children: [
+                SizedBox(
+                  height: 90, // More height
+                  width: 50, // Less width
+                  child: TextButton(
+                    onPressed: () {
+                      print("Add Button Pressed");
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      padding: EdgeInsets.zero, // Remove default padding
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ), // No border radius
+                    ),
+                    child: RotatedBox(
+                      quarterTurns: 3, // Rotate 90° left
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min, // Fit content size
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/Icon - Add.png", width: 20),
+                          SizedBox(width: 8), // Adjust spacing
+                          Text("Add"),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 50, // More height
+                  width: 50, // Less width
+                  child: TextButton(
+                    onPressed: () {
+                      print("Scan Button Pressed");
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      padding: EdgeInsets.zero, // Remove default padding
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ), // No border radius
+                    ),
+                    child: RotatedBox(
+                      quarterTurns: 3, // Rotate 90° left
+                      child: Image.asset("assets/Scan.png", width: 20),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              // Ensures ListView fits properly within Row
+              child: SizedBox(
+                height: 140, // Fixed height for horizontal scroll
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: cardData.length,
+                    itemBuilder: (context, index) {
+                      return CashCard(
+                        id: cardData[index]['id'],
+                        amount: cardData[index]['amount'],
+                        location: cardData[index]['location'],
+                        code: cardData[index]['code'],
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -56,7 +117,6 @@ class CashCard extends StatelessWidget {
   final String amount;
   final String location;
   final String code;
-  final List<Color> gradientColors;
 
   const CashCard({
     super.key,
@@ -64,7 +124,6 @@ class CashCard extends StatelessWidget {
     required this.amount,
     required this.location,
     required this.code,
-    required this.gradientColors,
   });
 
   @override
@@ -74,20 +133,7 @@ class CashCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 10),
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: gradientColors,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: gradientColors[0].withOpacity(0.6), // Soft glow
-            blurRadius: 15,
-            spreadRadius: 3,
-            offset: Offset(0, 8),
-          ),
-        ],
+        image: DecorationImage(image: AssetImage("assets/Bg.png")),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
