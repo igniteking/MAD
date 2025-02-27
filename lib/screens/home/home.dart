@@ -25,10 +25,77 @@ class HomeScreen extends StatelessWidget {
               height: 40, // Adjust size as needed
             ),
             const Spacer(), // Pushes remaining items to the right
-            IconButton(onPressed: () {}, icon: const Icon(Icons.help_outline)),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.explore_outlined),
+            SizedBox(
+              height: 30, // Adjust size
+              width: 30,
+              child: ClipOval(
+                // Makes the button circular
+                child: TextButton(
+                  onPressed: () {
+                    print("Button Pressed");
+                  },
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.all(EdgeInsets.zero),
+                    shape: WidgetStateProperty.all(
+                      CircleBorder(),
+                    ), // Ensures circular shape
+                    overlayColor: WidgetStateProperty.resolveWith<Color?>((
+                      Set<WidgetState> states,
+                    ) {
+                      if (states.contains(WidgetState.hovered)) {
+                        return const Color.fromARGB(
+                          122,
+                          33,
+                          149,
+                          243,
+                        ); // Change hover color
+                      }
+                      return null; // Default color (transparent)
+                    }),
+                  ),
+                  child: Image.asset(
+                    'assets/Help & Resources.png', // Your image
+                    fit: BoxFit.contain,
+                    width: 25,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30, // Adjust size
+              width: 30,
+              child: ClipOval(
+                // Makes the button circular
+                child: TextButton(
+                  onPressed: () {
+                    print("Button Pressed");
+                  },
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.all(EdgeInsets.zero),
+                    shape: WidgetStateProperty.all(
+                      CircleBorder(),
+                    ), // Ensures circular shape
+                    overlayColor: WidgetStateProperty.resolveWith<Color?>((
+                      Set<WidgetState> states,
+                    ) {
+                      if (states.contains(WidgetState.hovered)) {
+                        return const Color.fromARGB(
+                          122,
+                          33,
+                          149,
+                          243,
+                        ); // Change hover color
+                      }
+                      return null; // Default color (transparent)
+                    }),
+                  ),
+                  child: Image.asset(
+                    'assets/Group 31.png', // Your image
+                    fit: BoxFit.contain,
+                    width: 25,
+                  ),
+                ),
+              ),
             ),
             LikeButton(
               circleColor: const CircleColor(

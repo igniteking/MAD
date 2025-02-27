@@ -29,6 +29,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavBarRaisedInsetFb1(
         onNavBarItemTapped: onNavBarItemTapped,
