@@ -10,7 +10,7 @@ import 'package:mad/components/wallet_card.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  List<Map<String, String>> promotionCards = [
+  final List<Map<String, String>> promotionCards = [
     {"image": "assets/unsplash_BbVGAjfAQ4o.png", "title": "Malls in My City"},
     {"image": "assets/unsplash_Ew5pLCfW0zw.png", "title": "Sales & Offers"},
     {"image": "assets/unsplash_ASuzNrcUBtg.png", "title": "Concerts & Events"},
@@ -212,7 +212,7 @@ class HomeScreen extends StatelessWidget {
                                   fontSize: 14,
                                   shadows: [
                                     Shadow(
-                                      color: Colors.black.withOpacity(0.5),
+                                      color: Colors.black54,
                                       blurRadius: 4,
                                     ),
                                   ],
