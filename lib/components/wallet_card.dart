@@ -91,6 +91,7 @@ class WalletSection extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemCount: cardData.length,
                     itemBuilder: (context, index) {
