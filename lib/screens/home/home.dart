@@ -121,6 +121,7 @@ class HomeScreen extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -143,10 +144,9 @@ class HomeScreen extends StatelessWidget {
             Text("Developing this area!"),
             const SizedBox(height: 50),
             AdsSection(),
-            const SizedBox(height: 50),
             Promotion(),
             CouponCode(),
-            const SizedBox(height: 50),
+            const SizedBox(height: 10),
           ],
         ),
       ),
