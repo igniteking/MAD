@@ -58,7 +58,7 @@ class Promotion extends StatelessWidget {
                                 color: Colors.redAccent,
                               ), // Change icon as needed
                               onPressed: () {
-                                print("Like button pressed" + index.toString());
+                                print("Like button pressed$index");
                                 // Add your action here
                               },
                             ),
