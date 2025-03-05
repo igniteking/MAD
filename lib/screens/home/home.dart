@@ -3,6 +3,7 @@ import 'package:like_button/like_button.dart';
 import 'package:mad/components/ad_card.dart';
 import 'package:mad/components/bottom_coupon.dart';
 import 'package:mad/components/category_ad.dart';
+import 'package:mad/components/companies.dart';
 import 'package:mad/components/money_buttons.dart';
 import 'package:mad/components/profile_bar.dart';
 import 'package:mad/components/promotion.dart';
@@ -145,6 +146,9 @@ class HomeScreen extends StatelessWidget {
             Text("Developing this area!"),
             const SizedBox(height: 50),
             AdsSection(),
+            SizedBox(height: 10),
+            Companies(),
+            SizedBox(height: 20),
             CategoryAd(),
             Promotion(),
             CouponCode(),
