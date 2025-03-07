@@ -36,6 +36,7 @@ class MoneyGame extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 15),
       ],
     );
   }

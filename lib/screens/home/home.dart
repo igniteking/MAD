@@ -146,7 +146,6 @@ class HomeScreen extends StatelessWidget {
             ),
             // MoneyGame(),
             SponsoredShop(),
-            SizedBox(height: 50),
             AdsSection(),
             SizedBox(height: 10),
             Companies(),
