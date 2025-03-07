@@ -12,7 +12,7 @@ class MoneyButtons extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            width: 150,
+            width: 200,
             color: Colors.white,
             child: TextButton(
               onPressed: () {},
@@ -35,7 +35,7 @@ class MoneyButtons extends StatelessWidget {
           ),
           SizedBox(
             child: Container(
-              width: 190,
+              width: 200,
               color: Colors.white,
               child: TextButton(
                 onPressed: () {},
@@ -46,7 +46,7 @@ class MoneyButtons extends StatelessWidget {
                     Image.asset("assets/image 14.png", width: 20),
                     SizedBox(width: 10),
                     Text(
-                      "Mega Money Game",
+                      "Sponsored Shop",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF365099),
