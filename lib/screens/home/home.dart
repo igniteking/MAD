@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:mad/components/ad_card.dart';
 import 'package:mad/components/bottom_coupon.dart';
+import 'package:mad/components/car_ad.dart';
 import 'package:mad/components/category_ad.dart';
 import 'package:mad/components/companies.dart';
 import 'package:mad/components/money_buttons.dart';
@@ -143,8 +144,19 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 50),
-            Text("Developing this area!"),
-            const SizedBox(height: 50),
+            SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: ListView.builder(
+                physics:
+                    const BouncingScrollPhysics(), // Adds a bouncing effect
+                scrollDirection: Axis.horizontal,
+                itemCount: 3, // Ensure it matches the list length
+                itemBuilder:(context, index) => const CarAd(),
+              ),
+            ),
+
+            SizedBox(height: 50),
             AdsSection(),
             SizedBox(height: 10),
             Companies(),
