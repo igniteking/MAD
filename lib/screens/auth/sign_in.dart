@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mad/components/signIn/social_signin_button.dart';
 import 'package:mad/screens/home/home.dart';
 import 'package:mad/services/auth_service.dart';
 import 'package:appwrite/models.dart' as models;
@@ -60,6 +61,7 @@ class _SignInScreenState extends State<SignInScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 100),
               Text(
                 "Here To Get \nWelcome!",
                 textAlign: TextAlign.left,
@@ -115,158 +117,36 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              TextButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black,
-                  backgroundColor: Color(0xFFF1F6FB), // Text color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  elevation: 2, // Subtle shadow
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  minimumSize: const Size(
-                    double.infinity,
-                    54,
-                  ), // Full-width button
-                ),
-                onPressed: () {
-                  print("Login in with Google");
-                  // Triggered when the button is pressed
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Image.asset("assets/google.png", width: 20),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(width: 70),
-                    Center(
-                      child: Text(
-                        'Login with Twitter',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF2E3E5C),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              SizedBox(height: 70),
+              SocialButton(image: "assets/google.png", text: "Google"),
               SizedBox(height: 10),
-              TextButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black,
-                  backgroundColor: Color(0xFFF1F6FB), // Text color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  elevation: 2, // Subtle shadow
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  minimumSize: const Size(
-                    double.infinity,
-                    54,
-                  ), // Full-width button
-                ),
-                onPressed: () {
-                  print("Login in with twitter");
-                  // Triggered when the button is pressed
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Image.asset("assets/facebook.png", width: 20),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(width: 70),
-                    Center(
-                      child: Text(
-                        'Login with Facebook',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF2E3E5C),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              SocialButton(image: "assets/facebook.png", text: "Facebook"),
               SizedBox(height: 10),
-              TextButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black,
-                  backgroundColor: Color(0xFFF1F6FB), // Text color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  elevation: 2, // Subtle shadow
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  minimumSize: const Size(
-                    double.infinity,
-                    54,
-                  ), // Full-width button
-                ),
-                onPressed: () {
-                  print("Login in with twitter");
-                  // Triggered when the button is pressed
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Image.asset("assets/twitter.png", width: 20),
-                        ),
-                      ],
+              SocialButton(image: "assets/twitter.png", text: "Twitter"),
+              SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "Don’t have any account?",
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: Color(0xFF708399),
                     ),
-                    const SizedBox(width: 70),
-                    Center(
-                      child: Text(
-                        'Login with Twitter',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF2E3E5C),
-                        ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Sign Up",
+                      style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFFFF2449),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
