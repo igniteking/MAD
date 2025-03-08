@@ -15,6 +15,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SignInScreen());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SignInScreen(),
+      theme: ThemeData(
+        pageTransitionsTheme: PageTransitionsTheme(
+          builders: {
+            TargetPlatform.android:
+                CupertinoPageTransitionsBuilder(), // iOS-like transition
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+          },
+        ),
+      ),
+    );
   }
 }
