@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appwrite/appwrite.dart';
+import 'package:mad/screens/AD/game_card_screen.dart';
 import 'package:mad/screens/splash/splash1.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash1(),
+      home: GamePage(),
       theme: ThemeData(
         pageTransitionsTheme: PageTransitionsTheme(
           builders: {

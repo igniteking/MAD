@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mad/components/bottom_navbar.dart';
+import 'package:mad/components/Home/bottom_navbar.dart';
 import 'package:mad/screens/home/home.dart';
 import 'package:mad/screens/profile/profile.dart';
 

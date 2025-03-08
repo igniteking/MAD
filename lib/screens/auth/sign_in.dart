@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mad/components/auth/social_signin_button.dart';
+import 'package:mad/components/Auth/social_signin_button.dart';
 import 'package:mad/screens/auth/sign_up.dart';
 import 'package:mad/screens/home/home.dart';
 import 'package:mad/services/auth_service.dart';

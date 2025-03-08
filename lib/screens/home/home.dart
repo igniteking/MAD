@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
-import 'package:mad/components/ad_card.dart';
-import 'package:mad/components/bottom_coupon.dart';
-import 'package:mad/components/category_ad.dart';
-import 'package:mad/components/companies.dart';
-import 'package:mad/components/money_buttons.dart';
-import 'package:mad/components/money_game.dart';
-import 'package:mad/components/profile_bar.dart';
-import 'package:mad/components/promotion.dart';
-import 'package:mad/components/sponsored_shop.dart';
-import 'package:mad/components/wallet_card.dart';
+import 'package:mad/components/Game/ad_card.dart';
+import 'package:mad/components/Home/bottom_coupon.dart';
+import 'package:mad/components/Home/category_ad.dart';
+import 'package:mad/components/Home/companies.dart';
+import 'package:mad/components/Home/money_buttons.dart';
+import 'package:mad/components/Home/money_game.dart';
+import 'package:mad/components/Home/profile_bar.dart';
+import 'package:mad/components/Home/promotion.dart';
+import 'package:mad/components/Home/sponsored_shop.dart';
+import 'package:mad/components/Home/wallet_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

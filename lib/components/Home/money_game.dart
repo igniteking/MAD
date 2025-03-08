@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mad/components/car_ad.dart';
+import 'package:mad/components/Home/car_ad.dart';
 
 class MoneyGame extends StatelessWidget {
   const MoneyGame({super.key});
