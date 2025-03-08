@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appwrite/appwrite.dart';
-import 'package:mad/screens/auth/sign_in.dart';
-import 'package:mad/screens/main/main_screen.dart';
+import 'package:mad/screens/splash/splash1.dart';
 
 void main() {
   Client client = Client();
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignInScreen(),
+      home: Splash1(),
       theme: ThemeData(
         pageTransitionsTheme: PageTransitionsTheme(
           builders: {
