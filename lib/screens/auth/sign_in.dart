@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mad/components/signIn/social_signin_button.dart';
+import 'package:mad/components/auth/social_signin_button.dart';
+import 'package:mad/screens/auth/sign_up.dart';
 import 'package:mad/screens/home/home.dart';
 import 'package:mad/services/auth_service.dart';
 import 'package:appwrite/models.dart' as models;
@@ -136,7 +137,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpScreen()),
+                      );
+                    },
                     child: Text(
                       "Sign Up",
                       style: GoogleFonts.poppins(
