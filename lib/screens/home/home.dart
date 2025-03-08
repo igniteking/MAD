@@ -11,8 +11,22 @@ import 'package:mad/components/promotion.dart';
 import 'package:mad/components/sponsored_shop.dart';
 import 'package:mad/components/wallet_card.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool showMoneyGame = true; // Default visible widget
+
+  // Function to toggle visibility
+  void toggleScreen(bool isMoneyGame) {
+    setState(() {
+      showMoneyGame = isMoneyGame;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -140,12 +154,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                   WalletSection(),
                   SizedBox(height: 20),
-                  MoneyButtons(),
+                  MoneyButtons(
+                    onToggle: toggleScreen,
+                    showMoneyGame: showMoneyGame,
+                  ),
                 ],
               ),
             ),
-            // MoneyGame(),
-            SponsoredShop(),
+            showMoneyGame ? const MoneyGame() : const SponsoredShop(),
             AdsSection(),
             SizedBox(height: 10),
             Companies(),

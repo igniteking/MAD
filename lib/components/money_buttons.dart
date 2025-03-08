@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MoneyButtons extends StatelessWidget {
-  const MoneyButtons({super.key});
+  const MoneyButtons({
+    super.key,
+    required this.onToggle,
+    required this.showMoneyGame,
+  });
+
+  final Function(bool) onToggle;
+  final bool showMoneyGame;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +22,7 @@ class MoneyButtons extends StatelessWidget {
             width: 200,
             color: Colors.white,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () => onToggle(true), // Show MoneyGame
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +45,7 @@ class MoneyButtons extends StatelessWidget {
               width: 200,
               color: Colors.white,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () => onToggle(false), // Show SponsoredShop
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

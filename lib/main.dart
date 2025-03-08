@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appwrite/appwrite.dart';
+import 'package:mad/screens/auth/sign_in.dart';
 import 'package:mad/screens/main/main_screen.dart';
 
 void main() {
@@ -14,6 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MainScreen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SignInScreen());
   }
 }
