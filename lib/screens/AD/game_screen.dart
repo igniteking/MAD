@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mad/components/ad/image_carosil.dart';
 
 class GamePage extends StatelessWidget {
   const GamePage({super.key});
@@ -140,6 +141,17 @@ class GamePage extends StatelessWidget {
                     ],
                   ),
                 ],
+              ),
+
+              SizedBox(
+                height: 300,
+                child: ImageCarousel(
+                  imgList: [
+                    'assets/car.png',
+                    'assets/car1.png',
+                    'assets/car2.png',
+                  ],
+                ),
               ),
             ],
           ),
