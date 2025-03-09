@@ -1,38 +1,66 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class ImageCarousel extends StatelessWidget {
-  const ImageCarousel({super.key, required this.imgList});
+class ImageCarousel extends StatefulWidget {
+  const ImageCarousel({super.key, required this.imageList});
 
-  final List<String> imgList;
+  final List<String> imageList; // Accept images from the parent
+
+  @override
+  _ImageCarouselState createState() => _ImageCarouselState();
+}
+
+class _ImageCarouselState extends State<ImageCarousel> {
+  final CarouselSliderController _controller = CarouselSliderController();
+  int _currentIndex = 0; // Track the current page index
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Carousel Example")),
-      body: Center(
-        child: CarouselSlider(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CarouselSlider(
+          carouselController: _controller,
           options: CarouselOptions(
-            height: 200.0, // Carousel height
-            enlargeCenterPage: true, // Zooms in on the selected image
-            autoPlay: true, // Auto-play enabled
-            autoPlayInterval: Duration(seconds: 3), // 3-second interval
-            autoPlayCurve: Curves.fastOutSlowIn, // Smooth transition
-            enableInfiniteScroll: true, // Allows infinite scrolling
+            height: 200.0,
+            enlargeCenterPage: true,
+            autoPlay: true,
+            autoPlayInterval: Duration(seconds: 3),
+            onPageChanged: (index, reason) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
           ),
           items:
-              imgList.map((imagePath) {
+              widget.imageList.map((imagePath) {
                 return ClipRRect(
-                  borderRadius: BorderRadius.circular(10), // Rounded corners
+                  borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
                     imagePath,
                     width: double.infinity,
-                    fit: BoxFit.cover, // Ensures images fit properly
+                    fit: BoxFit.cover,
                   ),
                 );
               }).toList(),
         ),
-      ),
+        const SizedBox(height: 10),
+        // Dots Indicator
+        AnimatedSmoothIndicator(
+          activeIndex: _currentIndex,
+          count: widget.imageList.length,
+          effect: ExpandingDotsEffect(
+            dotHeight: 8,
+            dotWidth: 8,
+            activeDotColor: Colors.blue,
+            dotColor: Colors.grey.shade400,
+          ),
+          onDotClicked: (index) {
+            _controller.animateToPage(index);
+          },
+        ),
+      ],
     );
   }
 }

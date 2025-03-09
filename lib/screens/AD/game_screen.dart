@@ -146,11 +146,41 @@ class GamePage extends StatelessWidget {
               SizedBox(
                 height: 300,
                 child: ImageCarousel(
-                  imgList: [
+                  imageList: [
                     'assets/car.png',
                     'assets/car1.png',
                     'assets/car2.png',
                   ],
+                ),
+              ),
+              SizedBox(
+                width: double.infinity, // Full width
+                child: Card.filled(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'KIA Game Carnival - ',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontFamily: GoogleFonts.nunitoSans().fontFamily,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        Text(
+                          'Fill in the Car & Win',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontFamily: GoogleFonts.nunitoSans().fontFamily,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
