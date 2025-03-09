@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appwrite/appwrite.dart';
-import 'package:mad/screens/AD/game_card_screen.dart';
-import 'package:mad/screens/splash/splash1.dart';
+import 'package:mad/screens/AD/game_screen.dart';
 
 void main() {
   Client client = Client();

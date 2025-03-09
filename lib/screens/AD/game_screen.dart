@@ -84,19 +84,65 @@ class GamePage extends StatelessWidget {
         ),
       ),
       body: Container(
-        child: Column(
-          children: [
-            TextButton(
-              style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(Color(0xFFC41230)),
+        width: double.infinity,
+        color: Color(0xFFEEE9FB),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.spaceBetween, // Ensures spacing
+                children: [
+                  TextButton(
+                    style: ButtonStyle(
+                      fixedSize: WidgetStateProperty.all(Size(200, 50)),
+                      backgroundColor: WidgetStateProperty.all(
+                        Color(0xFFC41230),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'I Wanna Play the Game',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Row(
+                    // Wrap the icons in a row
+                    children: [
+                      IconButton(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(
+                            Colors.white,
+                          ),
+                          fixedSize: WidgetStatePropertyAll(Size(50, 50)),
+                        ),
+                        onPressed: () {
+                          print("Bookmark");
+                        },
+                        icon: Icon(Icons.bookmark_add_outlined),
+                      ),
+                      SizedBox(width: 10), // Add spacing between icons
+                      IconButton(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(
+                            Colors.white,
+                          ),
+                          fixedSize: WidgetStatePropertyAll(Size(50, 50)),
+                        ),
+                        onPressed: () {
+                          print("Share");
+                        },
+                        icon: Icon(Icons.share_outlined),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              onPressed: () {},
-              child: Text(
-                'I Wanna Play the Game',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

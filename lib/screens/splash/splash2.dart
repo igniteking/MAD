@@ -22,6 +22,7 @@ class _Splash2State extends State<Splash2> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
