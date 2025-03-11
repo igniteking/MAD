@@ -142,9 +142,9 @@ class GamePage extends StatelessWidget {
                   ),
                 ],
               ),
-
+              SizedBox(height: 10),
               SizedBox(
-                height: 300,
+                height: 250,
                 child: ImageCarousel(
                   imageList: [
                     'assets/car.png',
@@ -173,10 +173,95 @@ class GamePage extends StatelessWidget {
                         Text(
                           'Fill in the Car & Win',
                           style: TextStyle(
+                            color: Color(0xFF828282),
                             fontSize: 22,
                             fontFamily: GoogleFonts.nunitoSans().fontFamily,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w400,
                           ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset("assets/inr.png", width: 15),
+                                SizedBox(width: 5),
+                                Text(
+                                  '83,465',
+                                  style: TextStyle(
+                                    color: Color(0xFF092C4C),
+                                    fontSize: 16,
+                                    fontFamily:
+                                        GoogleFonts.nunitoSans().fontFamily,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset("assets/box.png", width: 30),
+                                SizedBox(width: 5),
+                                Text(
+                                  'Sponsor :',
+                                  style: TextStyle(
+                                    color: Color(0xFF092C4C),
+                                    fontSize: 16,
+                                    fontFamily:
+                                        GoogleFonts.nunitoSans().fontFamily,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Transform.translate(
+                                  offset: Offset(
+                                    0,
+                                    -5,
+                                  ), // Adjust the value as needed
+                                  child: Image.asset(
+                                    "assets/KIA.png",
+                                    width: 70,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset("assets/building.png", width: 20),
+                            SizedBox(width: 5),
+                            Text(
+                              "Redeem At : ",
+                              style: TextStyle(
+                                color: Color(0xFFE34614),
+                                fontSize: 16,
+                                fontFamily: GoogleFonts.nunitoSans().fontFamily,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "Pheonix Marketcity",
+                              style: TextStyle(
+                                color: Color(0xFF092C4C),
+                                fontSize: 16,
+                                fontFamily: GoogleFonts.nunitoSans().fontFamily,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
