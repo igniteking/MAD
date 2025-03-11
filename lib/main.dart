@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appwrite/appwrite.dart';
+import 'package:mad/screens/card%20balance/card_balance.dart';
 import 'package:mad/screens/home/home.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: CardBalance(),
       theme: ThemeData(
         pageTransitionsTheme: PageTransitionsTheme(
           builders: {
