@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appwrite/appwrite.dart';
-import 'package:mad/screens/AD/game_screen.dart';
+import 'package:mad/screens/home/home.dart';
 
 void main() {
   Client client = Client();
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GamePage(),
+      home: HomeScreen(),
       theme: ThemeData(
         pageTransitionsTheme: PageTransitionsTheme(
           builders: {
